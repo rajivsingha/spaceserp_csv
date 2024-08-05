@@ -3,6 +3,9 @@ import pandas as pd
 import requests
 import base64
 
+# Check if secrets are loaded properly
+st.write("Loaded secrets: ", st.secrets)
+
 # Authentication
 def check_password():
     def password_entered():
@@ -27,6 +30,10 @@ def check_password():
 
 if check_password():
     st.title("Keyword Query App")
+
+    # Check if API key is accessible
+    st.write("API Key: ", st.secrets["api_key"])
+    
 
     # File upload
     uploaded_file = st.file_uploader("Choose a .TXT file with keywords", type="txt")
