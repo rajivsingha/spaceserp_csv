@@ -6,7 +6,7 @@ import base64
 # Authentication
 def check_password():
     def password_entered():
-        if st.session_state["password"] == st.secrets["password"]:
+        if st.session_state["password"] == st.secret["password"]:
             st.session_state["password_correct"] = True
             del st.session_state["password"]  # Don't store password
         else:
@@ -39,7 +39,7 @@ if check_password():
 
         @st.cache_data
         def query_keyword(keyword):
-            apiKey = st.secrets["api_key"]
+            apiKey = st.secret["api_key"]
             params = {
                 "apiKey": apiKey,
                 "q": keyword,
