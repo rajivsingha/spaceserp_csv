@@ -1,12 +1,7 @@
 import streamlit as st
 import pandas as pd
 import requests
-import os
-from dotenv import load_dotenv
 import time
-
-# Load environment variables
-load_dotenv()
 
 # Authentication
 def check_password():
@@ -38,7 +33,7 @@ def check_password():
         return True
 
 def query_keyword(keyword):
-    apiKey = os.getenv("SPACESERP_API_KEY")
+    apiKey = st.secrets["SPACESERP_API_KEY"]
     params = {
         "apiKey": apiKey,
         "q": keyword,
