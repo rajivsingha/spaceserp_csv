@@ -65,7 +65,7 @@ def main():
         
         st.write(f"**Number of keywords in the list: {len(keywords)}**")
 
-        if st.button("Run Search"):
+        if st.button("Extract SERPs"):
             dfs = []
             progress_bar = st.progress(0)
             status_text = st.empty()
