@@ -37,13 +37,13 @@ def query_keyword(keyword):
     params = {
         "apiKey": apiKey,
         "q": keyword,
-        "location": "Houston,Texas,United States",
-        "domain": "google.com",
+        "location": "Jurong West, Singapore",
+        "domain": "google.com.sg",
         "gl": "us",
         "hl": "en",
         "resultFormat": "json",
         "resultBlocks": "organic_results",
-        "pageSize":"100"
+        "pageSize":"10"
     }
     response = requests.get("https://api.spaceserp.com/google/search", params=params)
     data = response.json()
